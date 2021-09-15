@@ -8,13 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		523F679F26F0949F007D51C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F679E26F0949F007D51C1 /* AppDelegate.swift */; };
-		523F67A126F0949F007D51C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F67A026F0949F007D51C1 /* SceneDelegate.swift */; };
-		523F67A326F0949F007D51C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F67A226F0949F007D51C1 /* ViewController.swift */; };
+		523F67A326F0949F007D51C1 /* RecordingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F67A226F0949F007D51C1 /* RecordingListViewController.swift */; };
 		523F67A626F0949F007D51C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 523F67A426F0949F007D51C1 /* Main.storyboard */; };
 		523F67A826F0949F007D51C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 523F67A726F0949F007D51C1 /* Assets.xcassets */; };
 		523F67AB26F0949F007D51C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 523F67A926F0949F007D51C1 /* LaunchScreen.storyboard */; };
-		523F67B626F0949F007D51C1 /* VoiceMemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F67B526F0949F007D51C1 /* VoiceMemoTests.swift */; };
+		523F67B626F0949F007D51C1 /* DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F67B526F0949F007D51C1 /* DateTests.swift */; };
 		523F67C126F0949F007D51C1 /* VoiceMemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F67C026F0949F007D51C1 /* VoiceMemoUITests.swift */; };
+		523F67D726F0E0AB007D51C1 /* RecordingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 523F67D626F0E0AB007D51C1 /* RecordingCell.xib */; };
+		523F67D926F0E0BE007D51C1 /* RecordingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F67D826F0E0BE007D51C1 /* RecordingCell.swift */; };
+		523F67DB26F0E80A007D51C1 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F67DA26F0E80A007D51C1 /* Theme.swift */; };
+		523F67DD26F0F485007D51C1 /* DarkTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F67DC26F0F485007D51C1 /* DarkTheme.swift */; };
+		523F67E026F0F898007D51C1 /* Recordable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F67DF26F0F898007D51C1 /* Recordable.swift */; };
+		523F67E326F0FD72007D51C1 /* String+ISODateConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F67E226F0FD72007D51C1 /* String+ISODateConversion.swift */; };
+		523F67E526F0FE3C007D51C1 /* Int+TimeFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F67E426F0FE3C007D51C1 /* Int+TimeFormatting.swift */; };
+		523F67E826F23187007D51C1 /* MemoTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F67E726F23187007D51C1 /* MemoTableCell.swift */; };
+		523F67EA26F2326E007D51C1 /* Clockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F67E926F2326E007D51C1 /* Clockable.swift */; };
+		523F67ED26F2334C007D51C1 /* Clockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F67E926F2326E007D51C1 /* Clockable.swift */; };
+		523F67EE26F23393007D51C1 /* String+ISODateConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F67E226F0FD72007D51C1 /* String+ISODateConversion.swift */; };
+		523F67EF26F23395007D51C1 /* Int+TimeFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F67E426F0FE3C007D51C1 /* Int+TimeFormatting.swift */; };
+		523F67F126F23475007D51C1 /* Date+StringFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F67F026F23475007D51C1 /* Date+StringFormatting.swift */; };
+		523F67F326F23E3C007D51C1 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F67F226F23E3C007D51C1 /* Clock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,18 +50,28 @@
 /* Begin PBXFileReference section */
 		523F679B26F0949F007D51C1 /* VoiceMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		523F679E26F0949F007D51C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		523F67A026F0949F007D51C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		523F67A226F0949F007D51C1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		523F67A226F0949F007D51C1 /* RecordingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingListViewController.swift; sourceTree = "<group>"; };
 		523F67A526F0949F007D51C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		523F67A726F0949F007D51C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		523F67AA26F0949F007D51C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		523F67AC26F0949F007D51C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		523F67B126F0949F007D51C1 /* VoiceMemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoiceMemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		523F67B526F0949F007D51C1 /* VoiceMemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceMemoTests.swift; sourceTree = "<group>"; };
+		523F67B526F0949F007D51C1 /* DateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTests.swift; sourceTree = "<group>"; };
 		523F67B726F0949F007D51C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		523F67BC26F0949F007D51C1 /* VoiceMemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoiceMemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		523F67C026F0949F007D51C1 /* VoiceMemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceMemoUITests.swift; sourceTree = "<group>"; };
 		523F67C226F0949F007D51C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		523F67D626F0E0AB007D51C1 /* RecordingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordingCell.xib; sourceTree = "<group>"; };
+		523F67D826F0E0BE007D51C1 /* RecordingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingCell.swift; sourceTree = "<group>"; };
+		523F67DA26F0E80A007D51C1 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		523F67DC26F0F485007D51C1 /* DarkTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkTheme.swift; sourceTree = "<group>"; };
+		523F67DF26F0F898007D51C1 /* Recordable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recordable.swift; sourceTree = "<group>"; };
+		523F67E226F0FD72007D51C1 /* String+ISODateConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ISODateConversion.swift"; sourceTree = "<group>"; };
+		523F67E426F0FE3C007D51C1 /* Int+TimeFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+TimeFormatting.swift"; sourceTree = "<group>"; };
+		523F67E726F23187007D51C1 /* MemoTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoTableCell.swift; sourceTree = "<group>"; };
+		523F67E926F2326E007D51C1 /* Clockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clockable.swift; sourceTree = "<group>"; };
+		523F67F026F23475007D51C1 /* Date+StringFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+StringFormatting.swift"; sourceTree = "<group>"; };
+		523F67F226F23E3C007D51C1 /* Clock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,11 +122,16 @@
 		523F679D26F0949F007D51C1 /* VoiceMemo */ = {
 			isa = PBXGroup;
 			children = (
+				523F67F226F23E3C007D51C1 /* Clock.swift */,
 				523F679E26F0949F007D51C1 /* AppDelegate.swift */,
-				523F67A026F0949F007D51C1 /* SceneDelegate.swift */,
-				523F67A226F0949F007D51C1 /* ViewController.swift */,
-				523F67A426F0949F007D51C1 /* Main.storyboard */,
+				523F67E626F23155007D51C1 /* Protocols */,
+				523F67E126F0FD5B007D51C1 /* Extensions */,
+				523F67DE26F0F888007D51C1 /* Recordings */,
+				523F67D526F0E092007D51C1 /* Recording Cell */,
+				523F67D126F09F8D007D51C1 /* Theme */,
+				523F67A226F0949F007D51C1 /* RecordingListViewController.swift */,
 				523F67A726F0949F007D51C1 /* Assets.xcassets */,
+				523F67A426F0949F007D51C1 /* Main.storyboard */,
 				523F67A926F0949F007D51C1 /* LaunchScreen.storyboard */,
 				523F67AC26F0949F007D51C1 /* Info.plist */,
 			);
@@ -113,7 +141,7 @@
 		523F67B426F0949F007D51C1 /* VoiceMemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				523F67B526F0949F007D51C1 /* VoiceMemoTests.swift */,
+				523F67B526F0949F007D51C1 /* DateTests.swift */,
 				523F67B726F0949F007D51C1 /* Info.plist */,
 			);
 			path = VoiceMemoTests;
@@ -126,6 +154,51 @@
 				523F67C226F0949F007D51C1 /* Info.plist */,
 			);
 			path = VoiceMemoUITests;
+			sourceTree = "<group>";
+		};
+		523F67D126F09F8D007D51C1 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				523F67DA26F0E80A007D51C1 /* Theme.swift */,
+				523F67DC26F0F485007D51C1 /* DarkTheme.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		523F67D526F0E092007D51C1 /* Recording Cell */ = {
+			isa = PBXGroup;
+			children = (
+				523F67D626F0E0AB007D51C1 /* RecordingCell.xib */,
+				523F67D826F0E0BE007D51C1 /* RecordingCell.swift */,
+			);
+			path = "Recording Cell";
+			sourceTree = "<group>";
+		};
+		523F67DE26F0F888007D51C1 /* Recordings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Recordings;
+			sourceTree = "<group>";
+		};
+		523F67E126F0FD5B007D51C1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				523F67E226F0FD72007D51C1 /* String+ISODateConversion.swift */,
+				523F67E426F0FE3C007D51C1 /* Int+TimeFormatting.swift */,
+				523F67F026F23475007D51C1 /* Date+StringFormatting.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		523F67E626F23155007D51C1 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				523F67DF26F0F898007D51C1 /* Recordable.swift */,
+				523F67E726F23187007D51C1 /* MemoTableCell.swift */,
+				523F67E926F2326E007D51C1 /* Clockable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +307,7 @@
 				523F67AB26F0949F007D51C1 /* LaunchScreen.storyboard in Resources */,
 				523F67A826F0949F007D51C1 /* Assets.xcassets in Resources */,
 				523F67A626F0949F007D51C1 /* Main.storyboard in Resources */,
+				523F67D726F0E0AB007D51C1 /* RecordingCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +332,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				523F67A326F0949F007D51C1 /* ViewController.swift in Sources */,
+				523F67F126F23475007D51C1 /* Date+StringFormatting.swift in Sources */,
+				523F67E526F0FE3C007D51C1 /* Int+TimeFormatting.swift in Sources */,
+				523F67DD26F0F485007D51C1 /* DarkTheme.swift in Sources */,
+				523F67E026F0F898007D51C1 /* Recordable.swift in Sources */,
+				523F67A326F0949F007D51C1 /* RecordingListViewController.swift in Sources */,
+				523F67EA26F2326E007D51C1 /* Clockable.swift in Sources */,
+				523F67F326F23E3C007D51C1 /* Clock.swift in Sources */,
 				523F679F26F0949F007D51C1 /* AppDelegate.swift in Sources */,
-				523F67A126F0949F007D51C1 /* SceneDelegate.swift in Sources */,
+				523F67DB26F0E80A007D51C1 /* Theme.swift in Sources */,
+				523F67D926F0E0BE007D51C1 /* RecordingCell.swift in Sources */,
+				523F67E326F0FD72007D51C1 /* String+ISODateConversion.swift in Sources */,
+				523F67E826F23187007D51C1 /* MemoTableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +351,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				523F67B626F0949F007D51C1 /* VoiceMemoTests.swift in Sources */,
+				523F67EF26F23395007D51C1 /* Int+TimeFormatting.swift in Sources */,
+				523F67EE26F23393007D51C1 /* String+ISODateConversion.swift in Sources */,
+				523F67B626F0949F007D51C1 /* DateTests.swift in Sources */,
+				523F67ED26F2334C007D51C1 /* Clockable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,7 +531,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = au.ok.VoiceMemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -463,7 +549,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = au.ok.VoiceMemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
