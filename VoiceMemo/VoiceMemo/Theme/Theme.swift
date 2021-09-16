@@ -14,6 +14,15 @@ protocol Themeable {
     var subtitleColor: UIColor { get }
     var primaryBackground: UIColor { get }
     var cellBackground: UIColor { get }
+    var buttonPrimary: ControlTheme { get }
+}
+
+protocol ControlTheme {
+    var backgroundColor: UIColor { get }
+    var size: CGSize { get }
+    var tintColor: UIColor { get }
+    var cornerRadius: CGFloat { get }
+    
 }
 
 /// theme enum

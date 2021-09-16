@@ -9,27 +9,25 @@ import UIKit
 import CoreGraphics
 
 class RecordingListViewController: UIViewController {
-
+    lazy var theme: Themeable = getTheme()
+    
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var recordingsTable: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Your Recordings"
+        view.backgroundColor = theme.primaryBackground
         
         recordingsTable.delegate = self
         recordingsTable.dataSource = self
-        recordingsTable.register(UINib(nibName: "RecordingCell", bundle: nil), forCellReuseIdentifier: "recording")
-        
         recordingsTable.rowHeight = UITableView.automaticDimension;
-//        recordingsTable.estimatedRowHeight = 110.0
-        
-        view.backgroundColor = UIColor(red: 0.07, green: 0.07, blue: 0.07, alpha: 1.00)
-        title = "Your Recordings"
-        
+        recordingsTable.register(UINib(nibName: "RecordingCell", bundle: nil), forCellReuseIdentifier: "recording")
+
         recordButton.setImage(UIImage(systemName: "mic.fill"), for: .normal)
-        recordButton.backgroundColor = UIColor(red: 1.00, green: 0.53, blue: 0.09, alpha: 1.00)
-        recordButton.tintColor = UIColor(red: 0.07, green: 0.07, blue: 0.07, alpha: 1.00)
-        recordButton.layer.cornerRadius = 31
+        recordButton.backgroundColor = theme.buttonPrimary.backgroundColor
+        recordButton.tintColor = theme.buttonPrimary.tintColor
+        recordButton.layer.cornerRadius = theme.buttonPrimary.cornerRadius
     }
 }
 

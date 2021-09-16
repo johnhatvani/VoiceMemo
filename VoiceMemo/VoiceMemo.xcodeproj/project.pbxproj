@@ -28,6 +28,7 @@
 		523F67EF26F23395007D51C1 /* Int+TimeFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F67E426F0FE3C007D51C1 /* Int+TimeFormatting.swift */; };
 		523F67F126F23475007D51C1 /* Date+StringFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F67F026F23475007D51C1 /* Date+StringFormatting.swift */; };
 		523F67F326F23E3C007D51C1 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F67F226F23E3C007D51C1 /* Clock.swift */; };
+		523F67F526F24822007D51C1 /* RecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F67F426F24822007D51C1 /* RecordingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		523F67E926F2326E007D51C1 /* Clockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clockable.swift; sourceTree = "<group>"; };
 		523F67F026F23475007D51C1 /* Date+StringFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+StringFormatting.swift"; sourceTree = "<group>"; };
 		523F67F226F23E3C007D51C1 /* Clock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
+		523F67F426F24822007D51C1 /* RecordingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +128,6 @@
 				523F679E26F0949F007D51C1 /* AppDelegate.swift */,
 				523F67E626F23155007D51C1 /* Protocols */,
 				523F67E126F0FD5B007D51C1 /* Extensions */,
-				523F67DE26F0F888007D51C1 /* Recordings */,
 				523F67D526F0E092007D51C1 /* Recording Cell */,
 				523F67D126F09F8D007D51C1 /* Theme */,
 				523F67A226F0949F007D51C1 /* RecordingListViewController.swift */,
@@ -134,6 +135,7 @@
 				523F67A426F0949F007D51C1 /* Main.storyboard */,
 				523F67A926F0949F007D51C1 /* LaunchScreen.storyboard */,
 				523F67AC26F0949F007D51C1 /* Info.plist */,
+				523F67F426F24822007D51C1 /* RecordingViewController.swift */,
 			);
 			path = VoiceMemo;
 			sourceTree = "<group>";
@@ -172,13 +174,6 @@
 				523F67D826F0E0BE007D51C1 /* RecordingCell.swift */,
 			);
 			path = "Recording Cell";
-			sourceTree = "<group>";
-		};
-		523F67DE26F0F888007D51C1 /* Recordings */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Recordings;
 			sourceTree = "<group>";
 		};
 		523F67E126F0FD5B007D51C1 /* Extensions */ = {
@@ -334,6 +329,7 @@
 			files = (
 				523F67F126F23475007D51C1 /* Date+StringFormatting.swift in Sources */,
 				523F67E526F0FE3C007D51C1 /* Int+TimeFormatting.swift in Sources */,
+				523F67F526F24822007D51C1 /* RecordingViewController.swift in Sources */,
 				523F67DD26F0F485007D51C1 /* DarkTheme.swift in Sources */,
 				523F67E026F0F898007D51C1 /* Recordable.swift in Sources */,
 				523F67A326F0949F007D51C1 /* RecordingListViewController.swift in Sources */,
