@@ -29,6 +29,7 @@
 		523F67F126F23475007D51C1 /* Date+StringFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F67F026F23475007D51C1 /* Date+StringFormatting.swift */; };
 		523F67F326F23E3C007D51C1 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F67F226F23E3C007D51C1 /* Clock.swift */; };
 		523F67F526F24822007D51C1 /* RecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F67F426F24822007D51C1 /* RecordingViewController.swift */; };
+		523F67F726F37D38007D51C1 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F67F626F37D38007D51C1 /* SpeechRecognizer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		523F67F026F23475007D51C1 /* Date+StringFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+StringFormatting.swift"; sourceTree = "<group>"; };
 		523F67F226F23E3C007D51C1 /* Clock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
 		523F67F426F24822007D51C1 /* RecordingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingViewController.swift; sourceTree = "<group>"; };
+		523F67F626F37D38007D51C1 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				523F67A926F0949F007D51C1 /* LaunchScreen.storyboard */,
 				523F67AC26F0949F007D51C1 /* Info.plist */,
 				523F67F426F24822007D51C1 /* RecordingViewController.swift */,
+				523F67F626F37D38007D51C1 /* SpeechRecognizer.swift */,
 			);
 			path = VoiceMemo;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				523F67E026F0F898007D51C1 /* Recordable.swift in Sources */,
 				523F67A326F0949F007D51C1 /* RecordingListViewController.swift in Sources */,
 				523F67EA26F2326E007D51C1 /* Clockable.swift in Sources */,
+				523F67F726F37D38007D51C1 /* SpeechRecognizer.swift in Sources */,
 				523F67F326F23E3C007D51C1 /* Clock.swift in Sources */,
 				523F679F26F0949F007D51C1 /* AppDelegate.swift in Sources */,
 				523F67DB26F0E80A007D51C1 /* Theme.swift in Sources */,
@@ -519,6 +523,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C3N9AV87F8;
 				INFOPLIST_FILE = VoiceMemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -537,6 +542,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C3N9AV87F8;
 				INFOPLIST_FILE = VoiceMemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
