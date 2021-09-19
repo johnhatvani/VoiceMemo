@@ -1,5 +1,7 @@
-language: swift
+language:
+  - swift
 
-xcode_project: VoiceMemo/VoiceMemo.xcodeproj
-xcode_scheme: VoiceMemo
-xcode_destination: platform=iOS Simulator,OS=14.5,name=iPhoneX
+osx_image: xcode 12.5
+
+script:
+  - xcodebuild -project VoiceMemo/VoiceMemo.xcodeproj -scheme VoiceMemu -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone X,OS=12.1' build test
