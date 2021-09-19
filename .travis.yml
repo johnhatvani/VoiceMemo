@@ -1,0 +1,5 @@
+language: swift
+
+xcode_project: VoiceMemo/VoiceMemo.xcodeproj
+xcode_scheme: VoiceMemo
+xcode_destination: platform=iOS Simulator,OS=14.5,name=iPhoneX
