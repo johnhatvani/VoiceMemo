@@ -11,16 +11,15 @@ import AVKit
 public class MakeRecordingViewController: UIViewController {
     lazy var theme = getTheme()
     lazy var recognizer = SpeechRecognizer()
+    var willCloseModal: (() -> Void)?
 
     lazy var appDelegate: AppDelegate = {
         guard let appdelegate = UIApplication.shared.delegate as? AppDelegate else { fatalError("no app delegate") }
         return appdelegate
     }()
     
-    lazy var recordingFileURL: URL = {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        let recordingPath = paths[0].appendingPathComponent("\(NSUUID().uuidString).wav")
-        return recordingPath
+    lazy var recordingFilename: String = {
+        return "\(NSUUID().uuidString).wav"
     }()
     
     @IBOutlet weak var recordButton: UIButton!
@@ -42,24 +41,25 @@ public class MakeRecordingViewController: UIViewController {
     public override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         recognizer.stopRecording()
+        willCloseModal?()
     }
     
     @IBAction func recordingState(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
         if (sender.isSelected) {
             recordingStart = Date()
-            try! recognizer.startRecording(saveTo: recordingFileURL) { string in
+            let fileURL = getDocumentsURL().appendingPathComponent(recordingFilename)
+            try! recognizer.startRecording(saveTo: fileURL) { string in
                 self.transcriptArea.text = string
             }
 
         } else {
             recognizer.stopRecording()
-            let record = Recording(context: appDelegate.persistentContainer.viewContext)
-            record.transcript = transcriptArea.text
-            record.datetime = Date()
-            record.duration = Date().timeIntervalSince(recordingStart ?? Date())
-            record.recordingURL = recordingFileURL
-            
+            let _ = try! Recording.create(withContext: appDelegate.persistentContainer.viewContext,
+                                          transcript: transcriptArea.text,
+                                          filename: recordingFilename,
+                                          duration: Date().timeIntervalSince(recordingStart ?? Date()))
+                                          
             appDelegate.persistentContainer.saveContext()
         }
     }

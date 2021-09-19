@@ -5,9 +5,9 @@
 //  Created by John Hatvani on 14/9/21.
 //
 
-import Foundation
 import UIKit
 import CoreGraphics
+import DSWaveformImage
 
 class RecordingCell: UITableViewCell {
     
@@ -15,10 +15,18 @@ class RecordingCell: UITableViewCell {
     @IBOutlet weak var detailView: UIView!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var waveform: UIImageView!
+    
+    let waveformImageDrawer = WaveformImageDrawer()
+    lazy var theme = getTheme()
     
     func configure(withRecord record: Recording) {
         timeLabel.text = record.duration.formattedTime()
         dateLabel.text = record.datetime!.recordingListFormat()
+        
+        let url = getDocumentsURL().appendingPathComponent(record.filename!)
+        waveform.generateWaveFile(fromURL: url)
+
     }
     
     override func layoutSubviews() {

@@ -3,11 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		520DA21426F6E2D3007FB1A5 /* Recording+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520DA21226F6E2D3007FB1A5 /* Recording+CoreDataProperties.swift */; };
+		52073DD126F6EBFD000BA6ED /* DSWaveformImage in Frameworks */ = {isa = PBXBuildFile; productRef = 52073DD026F6EBFD000BA6ED /* DSWaveformImage */; };
+		520B89A326F6FE2B0047DD47 /* Recording+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B89A126F6FE2B0047DD47 /* Recording+CoreDataProperties.swift */; };
+		520B89A526F702E80047DD47 /* UIImageView+waveform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B89A426F702E80047DD47 /* UIImageView+waveform.swift */; };
+		520DA21B26F6E504007FB1A5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520DA21A26F6E504007FB1A5 /* AVFoundation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		520DA21D26F6E50A007FB1A5 /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520DA21C26F6E50A007FB1A5 /* Speech.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		520DA21F26F6E510007FB1A5 /* AVFAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520DA21E26F6E510007FB1A5 /* AVFAudio.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		523F679F26F0949F007D51C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F679E26F0949F007D51C1 /* AppDelegate.swift */; };
 		523F67A326F0949F007D51C1 /* RecordingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F67A226F0949F007D51C1 /* RecordingListViewController.swift */; };
 		523F67A626F0949F007D51C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 523F67A426F0949F007D51C1 /* Main.storyboard */; };
@@ -52,8 +57,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		520DA22426F6E752007FB1A5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		520DA21226F6E2D3007FB1A5 /* Recording+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Recording+CoreDataProperties.swift"; path = "../../Recording+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		520B89A126F6FE2B0047DD47 /* Recording+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recording+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		520B89A426F702E80047DD47 /* UIImageView+waveform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+waveform.swift"; sourceTree = "<group>"; };
+		520DA21A26F6E504007FB1A5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		520DA21C26F6E50A007FB1A5 /* Speech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speech.framework; path = System/Library/Frameworks/Speech.framework; sourceTree = SDKROOT; };
+		520DA21E26F6E510007FB1A5 /* AVFAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFAudio.framework; path = System/Library/Frameworks/AVFAudio.framework; sourceTree = SDKROOT; };
 		523F679B26F0949F007D51C1 /* VoiceMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		523F679E26F0949F007D51C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		523F67A226F0949F007D51C1 /* RecordingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingListViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +111,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52073DD126F6EBFD000BA6ED /* DSWaveformImage in Frameworks */,
+				520DA21F26F6E510007FB1A5 /* AVFAudio.framework in Frameworks */,
+				520DA21D26F6E50A007FB1A5 /* Speech.framework in Frameworks */,
+				520DA21B26F6E504007FB1A5 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +135,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		520DA21926F6E504007FB1A5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				520DA21E26F6E510007FB1A5 /* AVFAudio.framework */,
+				520DA21C26F6E50A007FB1A5 /* Speech.framework */,
+				520DA21A26F6E504007FB1A5 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		523F679226F0949F007D51C1 = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +152,7 @@
 				523F67B426F0949F007D51C1 /* VoiceMemoTests */,
 				523F67BF26F0949F007D51C1 /* VoiceMemoUITests */,
 				523F679C26F0949F007D51C1 /* Products */,
+				520DA21926F6E504007FB1A5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -190,6 +227,7 @@
 		523F67E126F0FD5B007D51C1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				520B89A426F702E80047DD47 /* UIImageView+waveform.swift */,
 				523F67E226F0FD72007D51C1 /* String+ISODateConversion.swift */,
 				523F67E426F0FE3C007D51C1 /* Int+TimeFormatting.swift */,
 				523F67F026F23475007D51C1 /* Date+StringFormatting.swift */,
@@ -210,7 +248,7 @@
 			children = (
 				523F67F926F6A80D007D51C1 /* RecordingsModel.xcdatamodeld */,
 				523F67FE26F6AD1D007D51C1 /* Recording+CoreDataClass.swift */,
-				520DA21226F6E2D3007FB1A5 /* Recording+CoreDataProperties.swift */,
+				520B89A126F6FE2B0047DD47 /* Recording+CoreDataProperties.swift */,
 				523F67FC26F6AA1C007D51C1 /* RecordingsPersistentContainer.swift */,
 			);
 			path = Model;
@@ -226,12 +264,16 @@
 				523F679726F0949F007D51C1 /* Sources */,
 				523F679826F0949F007D51C1 /* Frameworks */,
 				523F679926F0949F007D51C1 /* Resources */,
+				520DA22426F6E752007FB1A5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = VoiceMemo;
+			packageProductDependencies = (
+				52073DD026F6EBFD000BA6ED /* DSWaveformImage */,
+			);
 			productName = VoiceMemo;
 			productReference = 523F679B26F0949F007D51C1 /* VoiceMemo.app */;
 			productType = "com.apple.product-type.application";
@@ -303,6 +345,9 @@
 				Base,
 			);
 			mainGroup = 523F679226F0949F007D51C1;
+			packageReferences = (
+				52073DCF26F6EBFD000BA6ED /* XCRemoteSwiftPackageReference "DSWaveformImage" */,
+			);
 			productRefGroup = 523F679C26F0949F007D51C1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -354,6 +399,7 @@
 				523F67F526F24822007D51C1 /* MakeRecordingViewController.swift in Sources */,
 				523F67DD26F0F485007D51C1 /* DarkTheme.swift in Sources */,
 				523F67A326F0949F007D51C1 /* RecordingListViewController.swift in Sources */,
+				520B89A526F702E80047DD47 /* UIImageView+waveform.swift in Sources */,
 				523F67EA26F2326E007D51C1 /* Clockable.swift in Sources */,
 				523F67F726F37D38007D51C1 /* SpeechRecognizer.swift in Sources */,
 				52AEEB7326F6B99700F6833C /* RecordingViewController.swift in Sources */,
@@ -362,7 +408,7 @@
 				523F67DB26F0E80A007D51C1 /* Theme.swift in Sources */,
 				523F67D926F0E0BE007D51C1 /* RecordingCell.swift in Sources */,
 				523F67FB26F6A80D007D51C1 /* RecordingsModel.xcdatamodeld in Sources */,
-				520DA21426F6E2D3007FB1A5 /* Recording+CoreDataProperties.swift in Sources */,
+				520B89A326F6FE2B0047DD47 /* Recording+CoreDataProperties.swift in Sources */,
 				523F67E326F0FD72007D51C1 /* String+ISODateConversion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -458,6 +504,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -519,6 +566,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -695,6 +743,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		52073DCF26F6EBFD000BA6ED /* XCRemoteSwiftPackageReference "DSWaveformImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmrschmidt/DSWaveformImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		52073DD026F6EBFD000BA6ED /* DSWaveformImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 52073DCF26F6EBFD000BA6ED /* XCRemoteSwiftPackageReference "DSWaveformImage" */;
+			productName = DSWaveformImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		523F67F926F6A80D007D51C1 /* RecordingsModel.xcdatamodeld */ = {

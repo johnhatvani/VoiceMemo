@@ -8,6 +8,10 @@
 import UIKit
 import CoreData
 
+func getDocumentsURL() -> URL {
+    return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+}
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?

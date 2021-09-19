@@ -26,10 +26,9 @@ public struct SpeechRecognizer {
         let audioSession = AVAudioSession.sharedInstance()
         try audioSession.setCategory(.record, mode: .measurement, options: .duckOthers)
         try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
-        try audioSession.setInputGain(1.0)
+        try audioSession.setInputGain(0.7)
         let inputNode = engine.inputNode
-        inputNode.volume = 1.0
-        
+
         assistant.recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
         guard let recognitionRequest = assistant.recognitionRequest else { fatalError("Unable to create a SFSpeechAudioBufferRecognitionRequest") }
         recognitionRequest.shouldReportPartialResults = true
@@ -49,24 +48,18 @@ public struct SpeechRecognizer {
             }
         }
         
-        guard let commonFormat = AVAudioFormat(commonFormat: .pcmFormatFloat32, sampleRate: 48000, channels: 1, interleaved: true) else {
-            return
-        }
-        
+        guard let commonFormat = AVAudioFormat(commonFormat: .pcmFormatFloat32, sampleRate: 48000, channels: 1, interleaved: true) else { return }
         let audioFile = try! AVAudioFile(forWriting: filepath, settings: commonFormat.settings, commonFormat: commonFormat.commonFormat, interleaved: true)
         
         // Configure the microphone input.
         inputNode.installTap(onBus: 0, bufferSize: 1024, format: commonFormat) { (buffer: AVAudioPCMBuffer, when: AVAudioTime) in
             assistant.recognitionRequest?.append(buffer)
-            
             do {
                 try audioFile.write(from: buffer)
             } catch {
                 print(error.localizedDescription)
             }
-            
         }
-        
         engine.prepare()
         try engine.start()
     }

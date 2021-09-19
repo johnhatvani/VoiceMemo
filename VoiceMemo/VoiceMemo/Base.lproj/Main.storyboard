@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="65F-H5-ocn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="65F-H5-ocn">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -45,7 +46,7 @@
                                 </constraints>
                                 <state key="normal" image="mic.fill" catalog="system"/>
                                 <connections>
-                                    <segue destination="Yav-4g-f0a" kind="presentation" id="loG-Yi-fMN"/>
+                                    <segue destination="Yav-4g-f0a" kind="presentation" identifier="makerecording" id="loG-Yi-fMN"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -129,7 +130,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gmC-lo-FIr">
-                                <rect key="frame" x="32" y="206" width="350" height="530"/>
+                                <rect key="frame" x="32" y="172" width="350" height="464"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -144,9 +145,12 @@
                                             <constraint firstAttribute="height" constant="62" id="zJ6-ML-8tC"/>
                                         </constraints>
                                         <state key="normal">
-                                            <imageReference key="image" image="chevron.backward" catalog="system" symbolScale="large" renderingMode="template"/>
+                                            <imageReference key="image" image="play.fill" catalog="system" symbolScale="large" renderingMode="template"/>
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24" scale="large"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pressPlayStop:" destination="3AF-Ie-M0E" eventType="touchUpInside" id="8GI-VQ-TEb"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F1R-dj-mMS">
                                         <rect key="frame" x="94" y="0.0" width="62" height="62"/>
@@ -164,15 +168,24 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KAu-wT-YcW">
+                                <rect key="frame" x="32" y="668" width="350" height="68"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="68" id="Xsb-wd-0h5"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zXR-PQ-URX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="zXR-PQ-URX" firstAttribute="trailing" secondItem="KAu-wT-YcW" secondAttribute="trailing" constant="32" id="8KR-cU-GVq"/>
+                            <constraint firstItem="KAu-wT-YcW" firstAttribute="leading" secondItem="zXR-PQ-URX" secondAttribute="leading" constant="32" id="A1u-DE-46g"/>
                             <constraint firstItem="zXR-PQ-URX" firstAttribute="trailing" secondItem="gmC-lo-FIr" secondAttribute="trailing" constant="32" id="DYY-aB-TMi"/>
-                            <constraint firstItem="qB5-Ne-e5s" firstAttribute="top" secondItem="gmC-lo-FIr" secondAttribute="bottom" constant="32" id="E54-Rp-ycO"/>
-                            <constraint firstItem="gmC-lo-FIr" firstAttribute="top" secondItem="zXR-PQ-URX" secondAttribute="top" constant="66" id="XrH-ZI-GA3"/>
+                            <constraint firstItem="KAu-wT-YcW" firstAttribute="top" secondItem="gmC-lo-FIr" secondAttribute="bottom" constant="32" id="MN6-il-vzb"/>
+                            <constraint firstItem="gmC-lo-FIr" firstAttribute="top" secondItem="zXR-PQ-URX" secondAttribute="top" constant="32" id="XrH-ZI-GA3"/>
                             <constraint firstItem="gmC-lo-FIr" firstAttribute="leading" secondItem="zXR-PQ-URX" secondAttribute="leading" constant="32" id="qpR-uT-G5g"/>
                             <constraint firstItem="zXR-PQ-URX" firstAttribute="bottom" secondItem="qB5-Ne-e5s" secondAttribute="bottom" constant="32" id="s3U-Oa-6AA"/>
+                            <constraint firstItem="qB5-Ne-e5s" firstAttribute="top" secondItem="KAu-wT-YcW" secondAttribute="bottom" constant="32" id="wWv-DM-dsd"/>
                             <constraint firstItem="qB5-Ne-e5s" firstAttribute="centerX" secondItem="8Tw-ir-SD8" secondAttribute="centerX" id="ygl-5w-T3p"/>
                         </constraints>
                     </view>
@@ -181,16 +194,17 @@
                         <outlet property="deleteButton" destination="F1R-dj-mMS" id="rn7-3Z-CsQ"/>
                         <outlet property="playPauseButton" destination="FFk-mH-eHY" id="Itt-yP-KXA"/>
                         <outlet property="transcriptArea" destination="gmC-lo-FIr" id="Qyh-6v-bsA"/>
+                        <outlet property="waveformImage" destination="KAu-wT-YcW" id="Xiu-wJ-5Jn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vVb-IH-nfG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1700" y="692"/>
+            <point key="canvasLocation" x="1700.0000000000002" y="691.74107142857144"/>
         </scene>
     </scenes>
     <resources>
-        <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="mic.fill" catalog="system" width="108" height="128"/>
+        <image name="play.fill" catalog="system" width="116" height="128"/>
         <image name="record.circle.fill" catalog="system" width="128" height="121"/>
         <image name="trash.fill" catalog="system" width="121" height="128"/>
         <systemColor name="labelColor">

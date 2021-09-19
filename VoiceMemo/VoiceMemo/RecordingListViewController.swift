@@ -47,13 +47,21 @@ class RecordingListViewController: UIViewController {
         recordingsTable.reloadData()
         
     }
-    
+        
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "recording" {
             (segue.destination as! RecordingViewController).recording = selectedRecording
         }
+        
+        if segue.identifier == "makerecording" {
+            (segue.destination as! MakeRecordingViewController).willCloseModal = {
+                self.loadRecords()
+                self.recordingsTable.reloadData()
+            }
+        }
     }
 }
+
 extension RecordingListViewController {
     func loadRecords() {
         let sort = NSSortDescriptor(key: "datetime", ascending: false)

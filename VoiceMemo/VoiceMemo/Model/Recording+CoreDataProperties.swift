@@ -18,8 +18,8 @@ extension Recording {
 
     @NSManaged public var datetime: Date?
     @NSManaged public var duration: Double
+    @NSManaged public var filename: String?
     @NSManaged public var transcript: String?
-    @NSManaged public var recordingURL: URL?
 
 }
 
