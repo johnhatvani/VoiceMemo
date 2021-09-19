@@ -9,17 +9,16 @@ import Foundation
 import UIKit
 import CoreGraphics
 
-class RecordingCell: UITableViewCell, MemoTableCell {
+class RecordingCell: UITableViewCell {
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var detailView: UIView!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var playButton: UIButton!
     
-    func configure(withRecord record: Recordable) {
+    func configure(withRecord record: Recording) {
         timeLabel.text = record.duration.formattedTime()
-        dateLabel.text = record.datetime.recordingListFormat()
-        
+        dateLabel.text = record.datetime!.recordingListFormat()
     }
     
     override func layoutSubviews() {

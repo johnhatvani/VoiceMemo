@@ -21,15 +21,19 @@
 		523F67E026F0F898007D51C1 /* Recordable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F67DF26F0F898007D51C1 /* Recordable.swift */; };
 		523F67E326F0FD72007D51C1 /* String+ISODateConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F67E226F0FD72007D51C1 /* String+ISODateConversion.swift */; };
 		523F67E526F0FE3C007D51C1 /* Int+TimeFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F67E426F0FE3C007D51C1 /* Int+TimeFormatting.swift */; };
-		523F67E826F23187007D51C1 /* MemoTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F67E726F23187007D51C1 /* MemoTableCell.swift */; };
 		523F67EA26F2326E007D51C1 /* Clockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F67E926F2326E007D51C1 /* Clockable.swift */; };
 		523F67ED26F2334C007D51C1 /* Clockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F67E926F2326E007D51C1 /* Clockable.swift */; };
 		523F67EE26F23393007D51C1 /* String+ISODateConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F67E226F0FD72007D51C1 /* String+ISODateConversion.swift */; };
 		523F67EF26F23395007D51C1 /* Int+TimeFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F67E426F0FE3C007D51C1 /* Int+TimeFormatting.swift */; };
 		523F67F126F23475007D51C1 /* Date+StringFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F67F026F23475007D51C1 /* Date+StringFormatting.swift */; };
 		523F67F326F23E3C007D51C1 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F67F226F23E3C007D51C1 /* Clock.swift */; };
-		523F67F526F24822007D51C1 /* RecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F67F426F24822007D51C1 /* RecordingViewController.swift */; };
+		523F67F526F24822007D51C1 /* MakeRecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F67F426F24822007D51C1 /* MakeRecordingViewController.swift */; };
 		523F67F726F37D38007D51C1 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F67F626F37D38007D51C1 /* SpeechRecognizer.swift */; };
+		523F67FB26F6A80D007D51C1 /* RecordingsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 523F67F926F6A80D007D51C1 /* RecordingsModel.xcdatamodeld */; };
+		523F67FD26F6AA1C007D51C1 /* RecordingsPersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F67FC26F6AA1C007D51C1 /* RecordingsPersistentContainer.swift */; };
+		523F680026F6AD1D007D51C1 /* Recording+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F67FE26F6AD1D007D51C1 /* Recording+CoreDataClass.swift */; };
+		523F680126F6AD1D007D51C1 /* Recording+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F67FF26F6AD1D007D51C1 /* Recording+CoreDataProperties.swift */; };
+		52AEEB7326F6B99700F6833C /* RecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AEEB7226F6B99700F6833C /* RecordingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,12 +74,16 @@
 		523F67DF26F0F898007D51C1 /* Recordable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recordable.swift; sourceTree = "<group>"; };
 		523F67E226F0FD72007D51C1 /* String+ISODateConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ISODateConversion.swift"; sourceTree = "<group>"; };
 		523F67E426F0FE3C007D51C1 /* Int+TimeFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+TimeFormatting.swift"; sourceTree = "<group>"; };
-		523F67E726F23187007D51C1 /* MemoTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoTableCell.swift; sourceTree = "<group>"; };
 		523F67E926F2326E007D51C1 /* Clockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clockable.swift; sourceTree = "<group>"; };
 		523F67F026F23475007D51C1 /* Date+StringFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+StringFormatting.swift"; sourceTree = "<group>"; };
 		523F67F226F23E3C007D51C1 /* Clock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
-		523F67F426F24822007D51C1 /* RecordingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingViewController.swift; sourceTree = "<group>"; };
+		523F67F426F24822007D51C1 /* MakeRecordingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeRecordingViewController.swift; sourceTree = "<group>"; };
 		523F67F626F37D38007D51C1 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
+		523F67FA26F6A80D007D51C1 /* RecordingsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RecordingsModel.xcdatamodel; sourceTree = "<group>"; };
+		523F67FC26F6AA1C007D51C1 /* RecordingsPersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingsPersistentContainer.swift; sourceTree = "<group>"; };
+		523F67FE26F6AD1D007D51C1 /* Recording+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recording+CoreDataClass.swift"; sourceTree = "<group>"; };
+		523F67FF26F6AD1D007D51C1 /* Recording+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recording+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		52AEEB7226F6B99700F6833C /* RecordingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,19 +134,21 @@
 		523F679D26F0949F007D51C1 /* VoiceMemo */ = {
 			isa = PBXGroup;
 			children = (
-				523F67F226F23E3C007D51C1 /* Clock.swift */,
-				523F679E26F0949F007D51C1 /* AppDelegate.swift */,
+				523F67F826F6A7E7007D51C1 /* Model */,
 				523F67E626F23155007D51C1 /* Protocols */,
 				523F67E126F0FD5B007D51C1 /* Extensions */,
 				523F67D526F0E092007D51C1 /* Recording Cell */,
 				523F67D126F09F8D007D51C1 /* Theme */,
-				523F67A226F0949F007D51C1 /* RecordingListViewController.swift */,
 				523F67A726F0949F007D51C1 /* Assets.xcassets */,
 				523F67A426F0949F007D51C1 /* Main.storyboard */,
 				523F67A926F0949F007D51C1 /* LaunchScreen.storyboard */,
 				523F67AC26F0949F007D51C1 /* Info.plist */,
-				523F67F426F24822007D51C1 /* RecordingViewController.swift */,
 				523F67F626F37D38007D51C1 /* SpeechRecognizer.swift */,
+				523F67F226F23E3C007D51C1 /* Clock.swift */,
+				523F679E26F0949F007D51C1 /* AppDelegate.swift */,
+				523F67A226F0949F007D51C1 /* RecordingListViewController.swift */,
+				523F67F426F24822007D51C1 /* MakeRecordingViewController.swift */,
+				52AEEB7226F6B99700F6833C /* RecordingViewController.swift */,
 			);
 			path = VoiceMemo;
 			sourceTree = "<group>";
@@ -193,10 +203,20 @@
 			isa = PBXGroup;
 			children = (
 				523F67DF26F0F898007D51C1 /* Recordable.swift */,
-				523F67E726F23187007D51C1 /* MemoTableCell.swift */,
 				523F67E926F2326E007D51C1 /* Clockable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		523F67F826F6A7E7007D51C1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				523F67FE26F6AD1D007D51C1 /* Recording+CoreDataClass.swift */,
+				523F67FF26F6AD1D007D51C1 /* Recording+CoreDataProperties.swift */,
+				523F67F926F6A80D007D51C1 /* RecordingsModel.xcdatamodeld */,
+				523F67FC26F6AA1C007D51C1 /* RecordingsPersistentContainer.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,18 +352,22 @@
 			files = (
 				523F67F126F23475007D51C1 /* Date+StringFormatting.swift in Sources */,
 				523F67E526F0FE3C007D51C1 /* Int+TimeFormatting.swift in Sources */,
-				523F67F526F24822007D51C1 /* RecordingViewController.swift in Sources */,
+				523F67FD26F6AA1C007D51C1 /* RecordingsPersistentContainer.swift in Sources */,
+				523F680026F6AD1D007D51C1 /* Recording+CoreDataClass.swift in Sources */,
+				523F67F526F24822007D51C1 /* MakeRecordingViewController.swift in Sources */,
 				523F67DD26F0F485007D51C1 /* DarkTheme.swift in Sources */,
 				523F67E026F0F898007D51C1 /* Recordable.swift in Sources */,
 				523F67A326F0949F007D51C1 /* RecordingListViewController.swift in Sources */,
 				523F67EA26F2326E007D51C1 /* Clockable.swift in Sources */,
 				523F67F726F37D38007D51C1 /* SpeechRecognizer.swift in Sources */,
+				52AEEB7326F6B99700F6833C /* RecordingViewController.swift in Sources */,
 				523F67F326F23E3C007D51C1 /* Clock.swift in Sources */,
 				523F679F26F0949F007D51C1 /* AppDelegate.swift in Sources */,
 				523F67DB26F0E80A007D51C1 /* Theme.swift in Sources */,
 				523F67D926F0E0BE007D51C1 /* RecordingCell.swift in Sources */,
+				523F67FB26F6A80D007D51C1 /* RecordingsModel.xcdatamodeld in Sources */,
+				523F680126F6AD1D007D51C1 /* Recording+CoreDataProperties.swift in Sources */,
 				523F67E326F0FD72007D51C1 /* String+ISODateConversion.swift in Sources */,
-				523F67E826F23187007D51C1 /* MemoTableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -675,6 +699,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		523F67F926F6A80D007D51C1 /* RecordingsModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				523F67FA26F6A80D007D51C1 /* RecordingsModel.xcdatamodel */,
+			);
+			currentVersion = 523F67FA26F6A80D007D51C1 /* RecordingsModel.xcdatamodel */;
+			path = RecordingsModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 523F679326F0949F007D51C1 /* Project object */;
 }

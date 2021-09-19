@@ -22,7 +22,6 @@ protocol ControlTheme {
     var size: CGSize { get }
     var tintColor: UIColor { get }
     var cornerRadius: CGFloat { get }
-    
 }
 
 /// theme enum
@@ -63,4 +62,5 @@ func applyTheme() {
     UINavigationBar.appearance().barStyle = .black
     UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: theme.titleColor]
     UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: theme.titleColor]
+    UINavigationBar.appearance().tintColor = theme.subtitleColor
 }
