@@ -14,49 +14,63 @@ import SwiftUI
 public struct SpeechRecognizer {
     private let assistant = SpeechAssist()
     
-    func record(handler: @escaping (String) -> Void) {
+    func startRecording(saveTo filepath: URL, handler: @escaping (String) -> Void) throws {
+        // Cancel the previous task if it's running.
+        assistant.recognitionTask?.cancel()
+        assistant.recognitionTask = nil
         
         assistant.engine = AVAudioEngine()
-        assistant.recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
-        assistant.recognitionRequest?.shouldReportPartialResults = true
-
-        do {
-            let audioSession = AVAudioSession.sharedInstance()
-            try audioSession.setCategory(.record, mode: .measurement, options: .duckOthers)
-            try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
-            
-            let input = assistant.engine?.inputNode
-            let format = AVAudioFormat(standardFormatWithSampleRate:48000, channels: 1)
-            
-            
-            input?.installTap(onBus: 0, bufferSize: 1024, format: format) { (buffer: AVAudioPCMBuffer, when: AVAudioTime) in
-                assistant.recognitionRequest?.append(buffer)
-            }
-            
-            assistant.engine?.prepare()
-            try assistant.engine?.start()
-            
-            assistant.recognitionTask = assistant.recognizer?.recognitionTask(with: assistant.recognitionRequest!) { (result, error) in
-                var isFinal = false
-                if let result = result {
-                    print(result.bestTranscription.formattedString)
-                    handler(result.bestTranscription.formattedString);
-                    isFinal = result.isFinal
-                }
-                print(isFinal)
-                if error != nil || isFinal {
-                    assistant.engine?.stop()
-                    input?.removeTap(onBus: 0)
-                    self.assistant.recognitionRequest = nil
-                }
-            }
+        guard let engine = assistant.engine else { fatalError("Unable to create AVAudioEngine") }
         
-        } catch {
-            print("Error transcibing audio: " + error.localizedDescription)
-            assistant.reset()
+        // Configure the audio session for the app.
+        let audioSession = AVAudioSession.sharedInstance()
+        try audioSession.setCategory(.record, mode: .measurement, options: .duckOthers)
+        try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
+        try audioSession.setInputGain(1.0)
+        let inputNode = engine.inputNode
+        inputNode.volume = 1.0
+        
+        assistant.recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
+        guard let recognitionRequest = assistant.recognitionRequest else { fatalError("Unable to create a SFSpeechAudioBufferRecognitionRequest") }
+        recognitionRequest.shouldReportPartialResults = true
+        
+        assistant.recognitionTask = assistant.recognizer!.recognitionTask(with: recognitionRequest) { result, error in
+            var isFinal = false
+            
+            if let result = result {
+                isFinal = result.isFinal
+                handler(result.bestTranscription.formattedString)
+                print("Text \(result.bestTranscription.formattedString)")
+            }
+            
+            if error != nil || isFinal {
+                inputNode.removeTap(onBus: 0)
+                assistant.reset()
+            }
         }
+        
+        guard let commonFormat = AVAudioFormat(commonFormat: .pcmFormatFloat32, sampleRate: 48000, channels: 1, interleaved: true) else {
+            return
+        }
+        
+        let audioFile = try! AVAudioFile(forWriting: filepath, settings: commonFormat.settings, commonFormat: commonFormat.commonFormat, interleaved: true)
+        
+        // Configure the microphone input.
+        inputNode.installTap(onBus: 0, bufferSize: 1024, format: commonFormat) { (buffer: AVAudioPCMBuffer, when: AVAudioTime) in
+            assistant.recognitionRequest?.append(buffer)
+            
+            do {
+                try audioFile.write(from: buffer)
+            } catch {
+                print(error.localizedDescription)
+            }
+            
+        }
+        
+        engine.prepare()
+        try engine.start()
     }
-
+    
     func stopRecording() {
         assistant.reset()
     }
@@ -72,14 +86,12 @@ public struct SpeechRecognizer {
     }
 }
 
-fileprivate class SpeechAssist {
+public class SpeechAssist: NSObject {
     var engine: AVAudioEngine?
     var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     var recognitionTask: SFSpeechRecognitionTask?
-    var audioFile: AVAudioFile?
     let recognizer = SFSpeechRecognizer()
-
-    
+        
     deinit {
         reset()
     }
@@ -87,5 +99,8 @@ fileprivate class SpeechAssist {
     func reset() {
         recognitionTask?.cancel()
         engine?.stop()
+        
+        recognitionRequest = nil
+        recognitionTask = nil
     }
 }

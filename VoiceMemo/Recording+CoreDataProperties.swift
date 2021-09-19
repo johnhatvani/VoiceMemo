@@ -12,9 +12,14 @@ import CoreData
 
 extension Recording {
 
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<Recording> {
+        return NSFetchRequest<Recording>(entityName: "Recording")
+    }
+
     @NSManaged public var datetime: Date?
     @NSManaged public var duration: Double
     @NSManaged public var transcript: String?
+    @NSManaged public var recordingURL: URL?
 
 }
 

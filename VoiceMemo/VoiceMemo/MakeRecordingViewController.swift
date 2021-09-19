@@ -8,29 +8,25 @@
 import UIKit
 import AVKit
 
-
-///
-//let rec = Recording(context: appDelegate.persistentContainer.viewContext)
-//rec.datetime = Date()
-//rec.duration = 40
-//rec.transcript = "the quick brown fox"
-
-//appDelegate.persistentContainer.saveContext()
-
-
 public class MakeRecordingViewController: UIViewController {
     lazy var theme = getTheme()
     lazy var recognizer = SpeechRecognizer()
+
     lazy var appDelegate: AppDelegate = {
-        guard let appdelegate = UIApplication.shared.delegate as? AppDelegate else {
-            fatalError("no app delegate")
-        }
+        guard let appdelegate = UIApplication.shared.delegate as? AppDelegate else { fatalError("no app delegate") }
         return appdelegate
+    }()
+    
+    lazy var recordingFileURL: URL = {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let recordingPath = paths[0].appendingPathComponent("\(NSUUID().uuidString).wav")
+        return recordingPath
     }()
     
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var transcriptArea: UITextView!
-    
+    var recordingStart: Date?
+
     public override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,8 +38,7 @@ public class MakeRecordingViewController: UIViewController {
         recordButton.setImage(UIImage(systemName: "waveform"), for: .normal)
         recordButton.setImage(UIImage(systemName: "stop.fill"), for: .selected)
     }
-    
-    
+        
     public override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         recognizer.stopRecording()
@@ -51,18 +46,20 @@ public class MakeRecordingViewController: UIViewController {
     
     @IBAction func recordingState(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
-        
         if (sender.isSelected) {
-            recognizer.record { transcript in
-                self.transcriptArea.text = transcript
+            recordingStart = Date()
+            try! recognizer.startRecording(saveTo: recordingFileURL) { string in
+                self.transcriptArea.text = string
             }
+
         } else {
             recognizer.stopRecording()
-            
             let record = Recording(context: appDelegate.persistentContainer.viewContext)
-            record.datetime = Date()
             record.transcript = transcriptArea.text
-            record.duration = 30
+            record.datetime = Date()
+            record.duration = Date().timeIntervalSince(recordingStart ?? Date())
+            record.recordingURL = recordingFileURL
+            
             appDelegate.persistentContainer.saveContext()
         }
     }

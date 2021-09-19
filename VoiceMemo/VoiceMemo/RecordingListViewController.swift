@@ -61,9 +61,8 @@ extension RecordingListViewController {
         
         do {
             recordings = try appDelegate.persistentContainer.viewContext.fetch(request)
-            print("worked, \(recordings.count) recordings")
-        } catch {
-            print ("something died")
+        } catch let e {
+            print ("Fetch Exception: \(e.localizedDescription)")
         }
     }
 }
