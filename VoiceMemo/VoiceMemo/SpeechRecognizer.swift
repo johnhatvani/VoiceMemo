@@ -48,7 +48,7 @@ public struct SpeechRecognizer {
             }
         }
         
-        guard let commonFormat = AVAudioFormat(commonFormat: .pcmFormatFloat32, sampleRate: 48000, channels: 1, interleaved: true) else { return }
+        guard let commonFormat = AVAudioFormat(commonFormat: .pcmFormatFloat32, sampleRate: inputNode.inputFormat(forBus: 0).sampleRate, channels: 1, interleaved: true) else { return }
         let audioFile = try! AVAudioFile(forWriting: filepath, settings: commonFormat.settings, commonFormat: commonFormat.commonFormat, interleaved: true)
         
         // Configure the microphone input.

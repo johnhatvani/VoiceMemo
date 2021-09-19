@@ -61,6 +61,7 @@ public class MakeRecordingViewController: UIViewController {
                                           duration: Date().timeIntervalSince(recordingStart ?? Date()))
                                           
             appDelegate.persistentContainer.saveContext()
+            navigationController?.popViewController(animated: true)
         }
     }
 }
