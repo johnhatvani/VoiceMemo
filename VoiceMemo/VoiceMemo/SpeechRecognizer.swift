@@ -67,16 +67,6 @@ public struct SpeechRecognizer {
     func stopRecording() {
         assistant.reset()
     }
-    
-    func requestSpeechRecogniserPermission(handler: @escaping (Bool) -> Void) {
-        SFSpeechRecognizer.requestAuthorization { status in
-            handler((status == .authorized))
-        }
-    }
-    
-    func requestMicrophonePermission(handler: @escaping (Bool) -> Void) {
-        AVAudioSession.sharedInstance().requestRecordPermission(handler)
-    }
 }
 
 public class SpeechAssist: NSObject {

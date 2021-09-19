@@ -7,6 +7,7 @@
 
 import UIKit
 import AVKit
+import Speech
 
 public class MakeRecordingViewController: UIViewController {
     lazy var theme = getTheme()
@@ -36,6 +37,25 @@ public class MakeRecordingViewController: UIViewController {
         recordButton.tintColor = theme.buttonPrimary.tintColor
         recordButton.setImage(UIImage(systemName: "waveform"), for: .normal)
         recordButton.setImage(UIImage(systemName: "stop.fill"), for: .selected)
+        
+        SFSpeechRecognizer.requestAuthorization { authStatus in
+            OperationQueue.main.addOperation {
+                if (authStatus == .authorized) {
+                    AVAudioSession.sharedInstance().requestRecordPermission { authorized in
+                        if (!authorized) {
+                            OperationQueue.main.addOperation {
+                                self.recordButton.isEnabled = false
+                                self.transcriptArea.text = "Microphone Recording permission denied."
+                                return
+                            }
+                        }
+                    }
+                    return
+                }
+                self.recordButton.isEnabled = false
+                self.transcriptArea.text = "Speech Recognition permission denied."
+            }
+        }
     }
         
     public override func viewWillDisappear(_ animated: Bool) {
@@ -61,11 +81,11 @@ public class MakeRecordingViewController: UIViewController {
                                           duration: Date().timeIntervalSince(recordingStart ?? Date()))
                                           
             appDelegate.persistentContainer.saveContext()
-            navigationController?.popViewController(animated: true)
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.dismiss(animated: true, completion: nil)
+            }
+            
         }
     }
-}
-
-extension MakeRecordingViewController: AVAudioPlayerDelegate {
-    
 }

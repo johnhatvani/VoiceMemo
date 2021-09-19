@@ -88,6 +88,7 @@ public class RecordingViewController: UIViewController {
     
     @IBAction func deleteRecord(_ sender: Any) {
         appDelegate.persistentContainer.viewContext.delete(recording!)
+        appDelegate.persistentContainer.saveContext()
         navigationController?.popViewController(animated: true)
     }
 }
